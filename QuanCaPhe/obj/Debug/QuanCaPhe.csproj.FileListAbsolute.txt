@@ -1,0 +1,17 @@
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\bin\Debug\QuanCaPhe.exe.config
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\bin\Debug\QuanCaPhe.exe
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\bin\Debug\QuanCaPhe.pdb
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.csproj.AssemblyReference.cache
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.Properties.Resources.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.csproj.GenerateResource.cache
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.csproj.CoreCompileInputs.cache
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.exe
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.pdb
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.exe.config
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.GiaoDienChinh.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.GiaoDienDangNhap.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormBanHang.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyNhanVien.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyMonAn.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyHoaDon.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormCaiDat.resources
