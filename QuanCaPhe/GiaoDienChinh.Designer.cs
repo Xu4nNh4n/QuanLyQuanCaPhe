@@ -38,7 +38,9 @@
             this.btnBanHang = new System.Windows.Forms.Button();
             this.labHienThiTenDangNhap = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -46,19 +48,15 @@
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnCaiDat);
             this.panel1.Controls.Add(this.btnDangXuat);
-            this.panel1.Controls.Add(this.btnQuanLyHD);
-            this.panel1.Controls.Add(this.btnQuanLyMA);
-            this.panel1.Controls.Add(this.btnQuanLyNV);
-            this.panel1.Controls.Add(this.btnBanHang);
             this.panel1.Controls.Add(this.labHienThiTenDangNhap);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 549);
+            this.panel1.Size = new System.Drawing.Size(200, 661);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -74,7 +72,7 @@
             this.btnCaiDat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaiDat.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaiDat.Location = new System.Drawing.Point(3, 334);
+            this.btnCaiDat.Location = new System.Drawing.Point(3, 251);
             this.btnCaiDat.Name = "btnCaiDat";
             this.btnCaiDat.Size = new System.Drawing.Size(192, 56);
             this.btnCaiDat.TabIndex = 6;
@@ -89,7 +87,7 @@
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 491);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 603);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(198, 56);
             this.btnDangXuat.TabIndex = 7;
@@ -103,7 +101,7 @@
             this.btnQuanLyHD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyHD.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyHD.Location = new System.Drawing.Point(3, 272);
+            this.btnQuanLyHD.Location = new System.Drawing.Point(3, 189);
             this.btnQuanLyHD.Name = "btnQuanLyHD";
             this.btnQuanLyHD.Size = new System.Drawing.Size(192, 56);
             this.btnQuanLyHD.TabIndex = 4;
@@ -117,7 +115,7 @@
             this.btnQuanLyMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyMA.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyMA.Location = new System.Drawing.Point(3, 210);
+            this.btnQuanLyMA.Location = new System.Drawing.Point(3, 127);
             this.btnQuanLyMA.Name = "btnQuanLyMA";
             this.btnQuanLyMA.Size = new System.Drawing.Size(192, 56);
             this.btnQuanLyMA.TabIndex = 3;
@@ -131,7 +129,7 @@
             this.btnQuanLyNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyNV.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyNV.Location = new System.Drawing.Point(3, 148);
+            this.btnQuanLyNV.Location = new System.Drawing.Point(3, 65);
             this.btnQuanLyNV.Name = "btnQuanLyNV";
             this.btnQuanLyNV.Size = new System.Drawing.Size(192, 56);
             this.btnQuanLyNV.TabIndex = 2;
@@ -145,7 +143,7 @@
             this.btnBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanHang.Location = new System.Drawing.Point(3, 86);
+            this.btnBanHang.Location = new System.Drawing.Point(3, 3);
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.Size = new System.Drawing.Size(192, 56);
             this.btnBanHang.TabIndex = 1;
@@ -155,10 +153,11 @@
             // 
             // labHienThiTenDangNhap
             // 
+            this.labHienThiTenDangNhap.Dock = System.Windows.Forms.DockStyle.Top;
             this.labHienThiTenDangNhap.Font = new System.Drawing.Font("Cascadia Code", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labHienThiTenDangNhap.Location = new System.Drawing.Point(3, 21);
+            this.labHienThiTenDangNhap.Location = new System.Drawing.Point(0, 0);
             this.labHienThiTenDangNhap.Name = "labHienThiTenDangNhap";
-            this.labHienThiTenDangNhap.Size = new System.Drawing.Size(192, 41);
+            this.labHienThiTenDangNhap.Size = new System.Drawing.Size(198, 41);
             this.labHienThiTenDangNhap.TabIndex = 1;
             this.labHienThiTenDangNhap.Text = "xin chào ADMIN";
             this.labHienThiTenDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,22 +170,40 @@
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Location = new System.Drawing.Point(201, 0);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(776, 549);
+            this.pnlContainer.Size = new System.Drawing.Size(1081, 661);
             this.pnlContainer.TabIndex = 8;
             this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnBanHang);
+            this.flowLayoutPanel1.Controls.Add(this.btnQuanLyNV);
+            this.flowLayoutPanel1.Controls.Add(this.btnQuanLyMA);
+            this.flowLayoutPanel1.Controls.Add(this.btnQuanLyHD);
+            this.flowLayoutPanel1.Controls.Add(this.btnCaiDat);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 86);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 330);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // GiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(979, 549);
+            this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1300, 700);
             this.Name = "GiaoDienChinh";
             this.Text = "z";
+            this.Load += new System.EventHandler(this.GiaoDienChinh_Load);
             this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,5 +220,6 @@
         private System.Windows.Forms.Button btnCaiDat;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

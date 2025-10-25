@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.chkQuanLy = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
@@ -62,17 +61,6 @@
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // chkQuanLy
-            // 
-            this.chkQuanLy.AutoSize = true;
-            this.chkQuanLy.Font = new System.Drawing.Font("Cascadia Code SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkQuanLy.Location = new System.Drawing.Point(49, 228);
-            this.chkQuanLy.Name = "chkQuanLy";
-            this.chkQuanLy.Size = new System.Drawing.Size(83, 21);
-            this.chkQuanLy.TabIndex = 3;
-            this.chkQuanLy.Text = "Quản lý";
-            this.chkQuanLy.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -119,11 +107,11 @@
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkQuanLy);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label1);
             this.Name = "GiaoDienDangNhap";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.GiaoDienDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +121,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.CheckBox chkQuanLy;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenDangNhap;

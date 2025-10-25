@@ -12,10 +12,17 @@ namespace QuanCaPhe
 {
     public partial class GiaoDienChinh : Form
     {
+
         private Form currentFormChild;
         public GiaoDienChinh()
         {
             InitializeComponent();
+            labHienThiTenDangNhap.Text = $"Xin chào {SessionLogin.HoTen.Trim().Split(' ').Last()}";
+            if (SessionLogin.Quyen == "Nhân viên")
+            {
+                btnQuanLyMA.Visible = false;
+                btnQuanLyNV.Visible = false;
+            }
         }
         private void OpenChildForm(Form childForm)
         {
@@ -62,7 +69,9 @@ namespace QuanCaPhe
 
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCaiDat());
+            FormCatDat frm = new FormCatDat();
+            frm.ShowDialog();
+
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -76,5 +85,10 @@ namespace QuanCaPhe
                 this.Close();
             }
         }
+
+        private void GiaoDienChinh_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }

@@ -14,4 +14,4 @@ D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormBanHang.resourc
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyNhanVien.resources
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyMonAn.resources
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormQuanLyHoaDon.resources
-D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormCaiDat.resources
+D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormCatDat.resources

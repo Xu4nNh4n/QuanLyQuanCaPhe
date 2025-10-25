@@ -1,0 +1,188 @@
+﻿-- ===============================
+-- 🧱 TẠO DATABASE + BẢNG
+-- ===============================
+CREATE DATABASE QLQUANCAFE;
+GO
+USE QLQUANCAFE;
+GO
+
+-- Bảng NHANVIEN
+CREATE TABLE NHANVIEN (
+    MANV INT IDENTITY(1,1) PRIMARY KEY,
+    HOTEN NVARCHAR(50) NOT NULL,
+    SDT VARCHAR(15),
+    CHUCVU NVARCHAR(30),
+);
+GO
+
+-- Bảng PHANQUYEN
+CREATE TABLE PHANQUYEN (
+    MAQ INT IDENTITY(1,1) PRIMARY KEY,
+    TENQ NVARCHAR(30) NOT NULL,
+    MOTA NVARCHAR(100)
+);
+GO
+
+-- Bảng TAIKHOAN (liên kết trực tiếp với PHANQUYEN)
+CREATE TABLE TAIKHOAN (
+    TENDANGNHAP VARCHAR(50) PRIMARY KEY,
+    MATKHAU VARCHAR(50) NOT NULL,
+    MANV INT NOT NULL,
+    MAQ INT NOT NULL,
+    FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV),
+    FOREIGN KEY (MAQ) REFERENCES PHANQUYEN(MAQ)
+);
+GO
+
+-- Bảng BAN
+CREATE TABLE BAN (
+    MABAN INT IDENTITY(1,1) PRIMARY KEY,
+    TENBAN NVARCHAR(20) NOT NULL,
+    TRANGTHAI NVARCHAR(20) DEFAULT N'Trống'
+);
+GO
+
+-- Bảng LOAIMON
+CREATE TABLE LOAIMON (
+    MALOAI INT IDENTITY(1,1) PRIMARY KEY,
+    TENLOAI NVARCHAR(50) NOT NULL
+);
+GO
+
+-- Bảng MONAN
+CREATE TABLE MONAN (
+    MAMON INT IDENTITY(1,1) PRIMARY KEY,
+    TENMON NVARCHAR(50) NOT NULL,
+    DONGIA DECIMAL(18,2) NOT NULL,
+    MALOAI INT NOT NULL,
+    FOREIGN KEY (MALOAI) REFERENCES LOAIMON(MALOAI)
+);
+GO
+
+-- Bảng HOADON
+CREATE TABLE HOADON (
+    MAHD INT IDENTITY(1,1) PRIMARY KEY,
+    NGAYLAP DATETIME DEFAULT GETDATE(),
+    TONGTIEN DECIMAL(18,2),
+    MANV INT NOT NULL,
+    MABAN INT NOT NULL,
+    FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV),
+    FOREIGN KEY (MABAN) REFERENCES BAN(MABAN)
+);
+GO
+
+-- Bảng CHITIETHOADON
+CREATE TABLE CHITIETHOADON (
+    MAHD INT NOT NULL,
+    MAMON INT NOT NULL,
+    SOLUONG INT DEFAULT 1,
+    DONGIA DECIMAL(18,2),
+    THANHTIEN AS (SOLUONG * DONGIA) PERSISTED,
+    PRIMARY KEY (MAHD, MAMON),
+    FOREIGN KEY (MAHD) REFERENCES HOADON(MAHD),
+    FOREIGN KEY (MAMON) REFERENCES MONAN(MAMON)
+);
+GO
+INSERT INTO PHANQUYEN (TENQ, MOTA)
+VALUES
+(N'Quản lý', N'Toàn quyền quản lý hệ thống'),
+(N'Nhân viên', N'Sử dụng chức năng bán hàng và lập hóa đơn');
+GO
+
+-- 2️⃣ NHANVIEN
+INSERT INTO NHANVIEN (HOTEN, SDT, CHUCVU)
+VALUES
+(N'Nguyễn Văn A', '0912345678', N'Quản lý'),
+(N'Lê Thị B', '0987654321', N'Nhân viên'),
+(N'Trần Văn C', '0909999999', N'Nhân viên');
+GO
+
+-- 3️⃣ TAIKHOAN (mỗi tài khoản có 1 quyền)
+INSERT INTO TAIKHOAN (TENDANGNHAP, MATKHAU, MANV, MAQ)
+VALUES
+('admin', '123', 1, 1),     -- quản lý
+('nhanvien1', '123', 2, 2), -- nhân viên
+('nhanvien2', '123', 3, 2); -- nhân viên
+GO
+
+-- 4️⃣ BAN
+INSERT INTO BAN (TENBAN, TRANGTHAI)
+VALUES
+(N'Bàn 1', N'Trống'),
+(N'Bàn 2', N'Có khách'),
+(N'Bàn 3', N'Trống'),
+(N'Bàn 4', N'Trống'),
+(N'Bàn 5', N'Đã đặt');
+GO
+INSERT INTO BAN (TENBAN, TRANGTHAI)
+VALUES
+(N'Bàn 6',  N'Trống'),
+(N'Bàn 7',  N'Trống'),
+(N'Bàn 8',  N'Trống'),
+(N'Bàn 9',  N'Trống'),
+(N'Bàn 10', N'Trống'),
+(N'Bàn 11', N'Trống'),
+(N'Bàn 12', N'Trống'),
+(N'Bàn 13', N'Trống'),
+(N'Bàn 14', N'Trống'),
+(N'Bàn 15', N'Trống'),
+(N'Bàn 16', N'Trống'),
+(N'Bàn 17', N'Trống'),
+(N'Bàn 18', N'Trống'),
+(N'Bàn 19', N'Trống'),
+(N'Bàn 20', N'Trống'),
+(N'Bàn 21', N'Trống'),
+(N'Bàn 22', N'Trống'),
+(N'Bàn 23', N'Trống'),
+(N'Bàn 24', N'Trống'),
+(N'Bàn 25', N'Trống');
+GO
+
+-- 5️⃣ LOAIMON
+INSERT INTO LOAIMON (TENLOAI)
+VALUES
+(N'Cà phê'),
+(N'Nước ép'),
+(N'Sinh tố'),
+(N'Trà sữa'),
+(N'Đồ ăn nhẹ');
+GO
+
+-- 6️⃣ MONAN
+INSERT INTO MONAN (TENMON, DONGIA, MALOAI)
+VALUES
+(N'Cà phê đen', 20000, 1),
+(N'Cà phê sữa', 25000, 1),
+(N'Nước cam', 30000, 2),
+(N'Sinh tố bơ', 35000, 3),
+(N'Trà sữa trân châu', 40000, 4),
+(N'Khoai tây chiên', 30000, 5),
+(N'Bánh mì pate', 25000, 5);
+GO
+
+-- 7️⃣ HOADON
+INSERT INTO HOADON (NGAYLAP, TONGTIEN, MANV, MABAN)
+VALUES 
+(GETDATE(), 85000, 2, 2);
+GO
+
+-- 8️⃣ CHITIETHOADON
+INSERT INTO CHITIETHOADON (MAHD, MAMON, SOLUONG, DONGIA)
+VALUES
+(1, 1, 1, 20000),   -- Cà phê đen
+(1, 3, 1, 30000),   -- Nước cam
+(1, 6, 1, 35000);   -- Khoai tây chiên
+GO
+select * from NHANVIEN
+SELECT * FROM PHANQUYEN
+SELECT * FROM TAIKHOAN
+SELECT * FROM BAN
+SELECT * FROM LOAIMON
+SELECT * FROM HOADON
+SELECT * FROM MONAN
+SELECT * FROM CHITIETHOADON
+
+SELECT HD.MAHD, HD.NGAYLAP, NV.HOTEN, B.TENBAN, HD.TONGTIEN
+FROM HOADON HD
+JOIN NHANVIEN NV ON NV.MANV = HD.MANV
+JOIN BAN B ON B.MABAN = HD.MABAN
