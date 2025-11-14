@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,8 +72,7 @@ namespace QuanCaPhe
                 conn.Close();
             }
             LoadLoaiMon();
-
-
+            
         }
         private void LoadLoaiMon()
         {
@@ -243,11 +243,6 @@ namespace QuanCaPhe
             giaText = giaText.Replace(",", "").Replace(".", ""); 
             decimal donGia = Convert.ToDecimal(giaText);
             int soLuong = (int)numSoLuong.Value;
-            if(soLuong <= 0)
-            {
-                MessageBox.Show("Vui lòng chọn số lượng lớn hơn 0.");
-                return;
-            }
             decimal thanhTien = donGia * soLuong;
             int stt = lstDSMonAndangsd.Items.Count + 1;
             ListViewItem itemHD = new ListViewItem(stt.ToString());
@@ -255,7 +250,45 @@ namespace QuanCaPhe
             itemHD.SubItems.Add(donGia.ToString("N0") + " VNĐ");
             itemHD.SubItems.Add(soLuong.ToString());
             itemHD.SubItems.Add(thanhTien.ToString("N0") + " VNĐ");
-            lstDSMonAndangsd.Items.Add(itemHD);
+            // Kiểm tra món đã có trong danh sách chưa
+            bool MonDaCo = false;
+            //Duyệt qua danh sách món đã có
+            foreach(ListViewItem item in lstDSMonAndangsd.Items)
+            {
+                if (item.SubItems[1].Text == tenMon)
+                {
+                    
+                    int soLuongCu = Convert.ToInt32(item.SubItems[3].Text);
+                        if(soLuong < 0 && soLuongCu < Math.Abs(soLuong))
+                        {
+                            MessageBox.Show("Số lượng món hiện có không đủ để giảm.");
+                            return;
+                        }
+                        
+                    soLuongCu += soLuong;
+                    if(soLuongCu == 0)
+                    {
+                        lstDSMonAndangsd.Items.Remove(item);
+                        MonDaCo = true;
+                        break;
+                    }
+                    item.SubItems[3].Text = soLuongCu.ToString();
+                    // Cập nhật thành tiền
+                    decimal thanhTienMoi = donGia * soLuongCu;
+                    item.SubItems[4].Text = thanhTienMoi.ToString("N0") + " VNĐ";
+                    MonDaCo = true;
+                    break;
+                }
+            }
+            if (!MonDaCo)
+            {
+                if(soLuong <= 0)
+                {
+                    MessageBox.Show("Số lượng món phải lớn hơn 0.");
+                    return;
+                }
+                lstDSMonAndangsd.Items.Add(itemHD);
+            }
             banDangChon.BackColor = Color.LimeGreen;
             CapNhatTongTien();
 
@@ -343,5 +376,72 @@ namespace QuanCaPhe
             }
         }
 
+        private void btnInHoaDonTam_Click(object sender, EventArgs e)
+        {
+            printHoaDonDocument = new PrintDocument();
+            int soLuongMon = lstDSMonAndangsd.Items.Count;
+            int chieuCaoCuaTungMon = 20; // mỗi món chiếm 20 px
+            int chieuCaoHeader = 100;     // tiêu đề + bàn + nhân viên + ngày
+            int chieuCaoFooter = 80;      // tổng tiền + cảm ơn
+            int chieuCaoTatCa = chieuCaoHeader + (soLuongMon * chieuCaoCuaTungMon) + chieuCaoFooter;
+
+            // Set PaperSize động
+            printHoaDonDocument.DefaultPageSettings.PaperSize = new PaperSize("HoaDon", 280, chieuCaoTatCa);
+            //Gán sự kiện in
+            printHoaDonDocument.PrintPage += printHoaDonDocumentPage;
+      
+            // Hiển thị xem trước
+            printHoaDonPreDialog.Document = printHoaDonDocument;
+            printHoaDonPreDialog.ShowDialog();
+            printHoaDonDocument = null;
+        }
+        private void printHoaDonDocumentPage(object sender, PrintPageEventArgs e)
+        {
+            // Lấy đối tượng Graphics từ sự kiện PrintPageEventArgs
+            Graphics g = e.Graphics;
+            g.ScaleTransform(0.8f, 0.8f);
+            Font font = new Font("Cascadia Code", 6);
+            int y = 20;
+            //Tiêu đề
+            g.DrawString("HÓA ĐƠN BÁN HÀNG", new Font("Cascadia Code", 12, FontStyle.Bold), Brushes.Black, 140, y);
+            y += 30;
+
+            g.DrawString($"Bàn: {banDangChon.Text}", font, Brushes.Black, 10, y);
+            y += 20;
+            g.DrawString($"Nhân viên: {SessionLogin.HoTen}", font, Brushes.Black, 10, y);
+            y += 20;
+            g.DrawString($"Ngày: {DateTime.Now:dd/MM/yyyy HH:mm:ss}", font, Brushes.Black, 10, y);
+            y += 20;
+
+
+            g.DrawString("STT", font, Brushes.Black, 10, y);
+            g.DrawString("Tên món", font, Brushes.Black, 50, y);
+            g.DrawString("SL", font, Brushes.Black, 130, y);
+            g.DrawString("Giá", font, Brushes.Black, 180, y);
+            g.DrawString("Thành tiền", font, Brushes.Black, 280, y);
+            y += 15;
+            g.DrawLine(Pens.Black, 10, y, 340, y);
+            y += 10;
+
+            foreach (ListViewItem item in lstDSMonAndangsd.Items)
+            {
+                g.DrawString(item.SubItems[0].Text, font, Brushes.Black, 10, y);
+                g.DrawString(item.SubItems[1].Text, font, Brushes.Black, 50, y);
+                g.DrawString(item.SubItems[3].Text, font, Brushes.Black, 130, y);
+                g.DrawString(item.SubItems[2].Text, font, Brushes.Black, 180, y);
+                g.DrawString(item.SubItems[4].Text, font, Brushes.Black, 280, y);
+                y += 20; // mỗi món chiếm 20 pixel
+            }
+
+            y += 5;
+            g.DrawLine(Pens.Black, 10, y, 340, y);
+            y += 15;
+
+            g.DrawString($"Tổng tiền: {txtTongTien.Text}", new Font("Cascadia Code", 8, FontStyle.Bold), Brushes.Black, 190, y);
+            y += 20;
+            g.DrawString("Cảm ơn quý khách! Hẹn gặp lại!", font, Brushes.Black, 140, y);
+            e.HasMorePages = false;
+        }
     }
-}
+ }
+ 

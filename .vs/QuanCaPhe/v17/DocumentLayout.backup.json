@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|d:\\code\\code\\c#\\.net\\quancaphe\\quancaphe\\formquanlymonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formquanlymonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|d:\\code\\code\\c#\\.net\\quancaphe\\quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|d:\\code\\code\\c#\\.net\\quancaphe\\quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formquanlymonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formquanlymonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\formcatdat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\formcatdat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodienchinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4595B76-D4EB-49CC-A8F3-81DCD782B628}|QuanCaPhe\\QuanCaPhe.csproj|solutionrelative:quancaphe\\giaodiendangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Bookmark",
@@ -103,6 +107,17 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "FormCatDat.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormCatDat.cs",
+              "RelativeDocumentMoniker": "QuanCaPhe\\FormCatDat.cs",
+              "ToolTip": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormCatDat.cs [Design]",
+              "RelativeToolTip": "QuanCaPhe\\FormCatDat.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:18:32.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FormQuanLyNhanVien.cs",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\FormQuanLyNhanVien.cs",
@@ -110,24 +125,22 @@
               "RelativeToolTip": "QuanCaPhe\\FormQuanLyNhanVien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T06:19:27.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T06:19:27.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "FormQuanLyNhanVien.cs [Design]",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\FormQuanLyNhanVien.cs",
               "ToolTip": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormQuanLyNhanVien.cs [Design]",
               "RelativeToolTip": "QuanCaPhe\\FormQuanLyNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T04:52:30.578Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-25T04:52:30.578Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "FormQuanLyMonAn.cs [Design]",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormQuanLyMonAn.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\FormQuanLyMonAn.cs",
@@ -139,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\Program.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\Program.cs",
@@ -147,37 +160,35 @@
               "RelativeToolTip": "QuanCaPhe\\Program.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAwBIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T08:13:10.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T08:13:10.113Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormBanHang.cs [Design]",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormBanHang.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\FormBanHang.cs",
               "ToolTip": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\FormBanHang.cs [Design]",
               "RelativeToolTip": "QuanCaPhe\\FormBanHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T05:39:28.433Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-24T05:39:28.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "GiaoDienChinh.cs",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienChinh.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\GiaoDienChinh.cs",
               "ToolTip": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienChinh.cs",
               "RelativeToolTip": "QuanCaPhe\\GiaoDienChinh.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBMAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T15:47:23.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "GiaoDienDangNhap.cs",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienDangNhap.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\GiaoDienDangNhap.cs",
@@ -185,12 +196,11 @@
               "RelativeToolTip": "QuanCaPhe\\GiaoDienDangNhap.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAwwCQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T09:32:31.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T09:32:31.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GiaoDienChinh.cs [Design]",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienChinh.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\GiaoDienChinh.cs",
@@ -202,15 +212,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GiaoDienDangNhap.cs [Design]",
               "DocumentMoniker": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienDangNhap.cs",
               "RelativeDocumentMoniker": "QuanCaPhe\\GiaoDienDangNhap.cs",
               "ToolTip": "D:\\Code\\code\\C#\\.NET\\QuanCaPhe\\QuanCaPhe\\GiaoDienDangNhap.cs [Design]",
               "RelativeToolTip": "QuanCaPhe\\GiaoDienDangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T08:25:44.718Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-18T08:25:44.718Z"
             }
           ]
         },

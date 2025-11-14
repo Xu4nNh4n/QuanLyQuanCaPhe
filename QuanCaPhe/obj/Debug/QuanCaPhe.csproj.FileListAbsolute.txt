@@ -7,7 +7,6 @@ D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.csproj.GenerateReso
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.csproj.CoreCompileInputs.cache
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.exe
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.pdb
-D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.exe.config
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.GiaoDienChinh.resources
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.GiaoDienDangNhap.resources
 D:\Code\code\C#\.NET\QuanCaPhe\QuanCaPhe\obj\Debug\QuanCaPhe.FormBanHang.resources

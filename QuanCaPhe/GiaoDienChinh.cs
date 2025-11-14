@@ -26,25 +26,30 @@ namespace QuanCaPhe
         }
         private void OpenChildForm(Form childForm)
         {
-            // Nếu đã có form con đang mở thì đóng lại
             if (currentFormChild != null)
             {
-                currentFormChild.Close();
+                if (currentFormChild != childForm)
+                    currentFormChild.Hide();  // chỉ ẩn form cũ, không đóng
             }
             currentFormChild = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            pnlContainer.Controls.Clear();
-            pnlContainer.Controls.Add(childForm);
-            pnlContainer.Tag = childForm;
+
+            if (!pnlContainer.Controls.Contains(childForm))
+                pnlContainer.Controls.Add(childForm);
+
             childForm.BringToFront();
             childForm.Show();
         }
-
+        private FormBanHang formBanHang;
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormBanHang());
+            if(formBanHang == null || formBanHang.IsDisposed)
+            {
+                formBanHang = new FormBanHang();
+            }
+            OpenChildForm(formBanHang);
         }
 
         private void pnlContainer_Paint(object sender, PaintEventArgs e)

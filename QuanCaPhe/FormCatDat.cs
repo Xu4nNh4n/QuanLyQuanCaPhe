@@ -71,5 +71,14 @@ namespace QuanCaPhe
                 MessageBox.Show("Lỗi khi đổi mật khẩu: " + ex.Message);
             }
         }
+
+        private void FormCatDat_Load(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
+            label4.BackColor = Color.Transparent;
+
+        }
     }
 }

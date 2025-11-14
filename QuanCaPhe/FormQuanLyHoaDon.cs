@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanCaPhe
 {
@@ -150,6 +151,32 @@ namespace QuanCaPhe
         {
             string input = txtTimKiem.Text.Trim();
             loadHoaDonTheoKeyWord(input);
+        }
+
+        private void lstHoaDon_Resize(object sender, EventArgs e)
+        {
+            ResizeColumns();
+        }
+        private void ResizeColumns()
+        {
+            int colCount = lstHoaDon.Columns.Count;
+            int colCount2 = lstChiTietHD.Columns.Count;
+            if (colCount == 0) return;
+
+            int totalWidth = lstHoaDon.ClientSize.Width;
+            int colWidth = totalWidth / colCount;
+
+            foreach (ColumnHeader col in lstHoaDon.Columns)
+            {
+                col.Width = colWidth;
+            }
+            if (colCount2 == 0) return;
+            int totalWidth2 = lstChiTietHD.ClientSize.Width;
+            int colWidth2 = totalWidth2 / colCount2;
+            foreach (ColumnHeader col in lstChiTietHD.Columns)
+            {
+                col.Width = colWidth2;
+            }
         }
     }
 }

@@ -87,7 +87,42 @@ namespace QuanCaPhe
 
         private void GiaoDienDangNhap_Load(object sender, EventArgs e)
         {
-         
+            txtMatKhau.PasswordChar = '*';
+            btnShowPass.Text = "👁️";
+            label1.Parent = pictureBox1;
+            label1.BackColor = Color.Transparent;
+
+            label2.Parent = pictureBox1;
+            label2.BackColor = Color.Transparent;
+
+            label3.Parent = pictureBox1;
+            label3.BackColor = Color.Transparent;
+        }
+
+        private void btnShowPass_Click(object sender, EventArgs e)
+        {
+            if (txtMatKhau.PasswordChar == '*')
+            {
+                txtMatKhau.PasswordChar = '\0';
+                btnShowPass.Text = "🙈"; 
+            }
+            else
+            {
+                 txtMatKhau.PasswordChar = '*';
+                btnShowPass.Text = "👁️"; 
+
+            }
+
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnDangNhap;
+        }
+
+        private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnDangNhap;
         }
     }
 }

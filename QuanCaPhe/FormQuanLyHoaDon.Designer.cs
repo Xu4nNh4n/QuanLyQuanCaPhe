@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.lstHoaDon = new System.Windows.Forms.ListView();
+            this.colmaHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colngayLap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.coltenNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.coltenBan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTongtien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lstChiTietHD = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,11 +42,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.colmaHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colngayLap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.coltenNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.coltenBan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTongtien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -69,6 +69,28 @@
             this.lstHoaDon.UseCompatibleStateImageBehavior = false;
             this.lstHoaDon.View = System.Windows.Forms.View.Details;
             this.lstHoaDon.Click += new System.EventHandler(this.lstHoaDon_Click);
+            this.lstHoaDon.Resize += new System.EventHandler(this.lstHoaDon_Resize);
+            // 
+            // colmaHD
+            // 
+            this.colmaHD.Text = "Mã hóa đơn";
+            // 
+            // colngayLap
+            // 
+            this.colngayLap.Text = "Ngày lập";
+            // 
+            // coltenNV
+            // 
+            this.coltenNV.Text = "Tên nhân viên";
+            this.coltenNV.Width = 91;
+            // 
+            // coltenBan
+            // 
+            this.coltenBan.Text = "Tên bàn";
+            // 
+            // colTongtien
+            // 
+            this.colTongtien.Text = "Tổng tiền";
             // 
             // lstChiTietHD
             // 
@@ -87,6 +109,7 @@
             this.lstChiTietHD.TabIndex = 3;
             this.lstChiTietHD.UseCompatibleStateImageBehavior = false;
             this.lstChiTietHD.View = System.Windows.Forms.View.Details;
+            this.lstChiTietHD.Resize += new System.EventHandler(this.lstHoaDon_Resize);
             // 
             // columnHeader1
             // 
@@ -135,27 +158,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các bảng thông tin ";
-            // 
-            // colmaHD
-            // 
-            this.colmaHD.Text = "Mã hóa đơn";
-            // 
-            // colngayLap
-            // 
-            this.colngayLap.Text = "Ngày lập";
-            // 
-            // coltenNV
-            // 
-            this.coltenNV.Text = "Tên nhân viên";
-            this.coltenNV.Width = 91;
-            // 
-            // coltenBan
-            // 
-            this.coltenBan.Text = "Tên bàn";
-            // 
-            // colTongtien
-            // 
-            this.colTongtien.Text = "Tổng tiền";
             // 
             // label1
             // 
@@ -208,6 +210,7 @@
             this.Name = "FormQuanLyHoaDon";
             this.Text = "FormQuanLyHoaDon";
             this.Load += new System.EventHandler(this.FormQuanLyHoaDon_Load);
+            this.Resize += new System.EventHandler(this.lstHoaDon_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.grbTTHoaDon.ResumeLayout(false);
