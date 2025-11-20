@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using QuanCaPhe;
 namespace QuanCaPhe
 {
     public partial class FormQuanLyHoaDon : Form
@@ -23,9 +23,22 @@ namespace QuanCaPhe
 
         private void FormQuanLyHoaDon_Load(object sender, EventArgs e)
         {
+            if(SessionLogin.Quyen == "Quản lý")
+            {
+                label2.Text = "Tổng doanh thu hôm nay:";
+                label3.Text = "Tổng doanh thu tháng này:";
+                label4.Text = "Top món bán chạy:";
+                label5.Text = "Nhân viên nổi bật: ";
+            }
+            if(SessionLogin.Quyen == "Nhân viên")
+            {
+                label2.Text = "Tổng hóa đơn hôm nay:";
+                label3.Text = "Tổng doanh thu hôm nay:";
+                label4.Text = "Tổng hóa đơn tháng này:";
+                label5.Text = "Số món đã bán:";
+            }
             loadHoaDon();
         }
-        int lastHoaDon = -1;
         private void loadHoaDon()
         {
             try
@@ -65,7 +78,7 @@ namespace QuanCaPhe
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 lstChiTietHD.Items.Clear();
-                string sqlChiTietHoaDon =  @"SELECT CTHD.MAMON, M.TENMON, CTHD.SOLUONG, CTHD.DONGIA, CTHD.THANHTIEN FROM CHITIETHOADON CTHD JOIN MONAN M ON CTHD.MAMON = M.MAMON WHERE CTHD.MAHD = @mahd";
+                string sqlChiTietHoaDon = @"SELECT CTHD.MAMON, M.TENMON, CTHD.SOLUONG, CTHD.DONGIA, CTHD.THANHTIEN FROM CHITIETHOADON CTHD JOIN MONAN M ON CTHD.MAMON = M.MAMON WHERE CTHD.MAHD = @mahd";
                 SqlCommand cmdCTHoaDon = new SqlCommand(sqlChiTietHoaDon, conn);
                 cmdCTHoaDon.Parameters.AddWithValue("@mahd", maHD);
                 SqlDataReader dr = cmdCTHoaDon.ExecuteReader();
@@ -79,7 +92,7 @@ namespace QuanCaPhe
                     lstChiTietHD.Items.Add(item);
                 }
                 dr.Close();
-                    
+
             }
             catch (Exception ex)
             {
@@ -178,5 +191,126 @@ namespace QuanCaPhe
                 col.Width = colWidth2;
             }
         }
+        private void HienThiHoaDonAdmin()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                string sqlTongDoanhThu ="SELECT SUM(TONGTIEN) FROM HOADON WHERE CONVERT(DATE, NGAYLAP) = CONVERT(DATE, GETDATE())";
+                SqlCommand cmdTongDoanhThu = new SqlCommand(sqlTongDoanhThu, conn);
+                object kq1 = cmdTongDoanhThu.ExecuteScalar();
+                decimal TongDoanhThuHomNay = (kq1 == DBNull.Value ? 0 : Convert.ToDecimal(kq1));
+                textBox1.Text = TongDoanhThuHomNay.ToString("N0") + " VNĐ";
+
+                string sqlTongDoanhThuThang ="SELECT SUM(TONGTIEN) FROM HOADON WHERE MONTH(NGAYLAP)=MONTH(GETDATE()) AND YEAR(NGAYLAP)=YEAR(GETDATE())";
+                SqlCommand cmdTongDoanhthuThang = new SqlCommand(sqlTongDoanhThuThang, conn);
+
+                object kq2 = cmdTongDoanhthuThang.ExecuteScalar();
+                decimal TongDoanhThuThangNay = (kq2 == DBNull.Value ? 0 : Convert.ToDecimal(kq2));
+                textBox2.Text = TongDoanhThuThangNay.ToString("N0") + " VNĐ";
+
+                string sqlTopMon = @"
+                                SELECT TOP 1 
+                                    m.TenMon
+                                FROM CHITIETHOADON ct
+                                JOIN HOADON hd ON ct.MaHD = hd.MaHD
+                                JOIN MONAN m ON ct.MaMon = m.MaMon
+                                WHERE MONTH(hd.NgayLap) = MONTH(GETDATE())
+                                  AND YEAR(hd.NgayLap) = YEAR(GETDATE())
+                                GROUP BY m.TenMon
+                                ORDER BY SUM(ct.SoLuong) DESC";
+
+                SqlCommand cmdTopMon = new SqlCommand(sqlTopMon, conn);
+                string TopMonAn = Convert.ToString(cmdTopMon.ExecuteScalar());
+                textBox3.Text = TopMonAn;
+
+                string sqlNhanVien = @"
+                                SELECT TOP 1 
+                                    nv.HoTen
+                                FROM HOADON hd
+                                JOIN NHANVIEN nv ON nv.MaNV = hd.MaNV
+                                WHERE MONTH(hd.NgayLap) = MONTH(GETDATE())
+                                  AND YEAR(hd.NgayLap) = YEAR(GETDATE())
+                                GROUP BY nv.HoTen
+                                ORDER BY SUM(hd.TongTien) DESC";
+
+                SqlCommand TopNhanVien = new SqlCommand(sqlNhanVien, conn);
+
+                string topNV = Convert.ToString(TopNhanVien.ExecuteScalar());
+                textBox4.Text = topNV;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thống kê: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        private void HienThiHoaDonNhanVien()
+        {
+            int manv = SessionLogin.MaNV;
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                // Tổng hóa đơn hôm nay
+                string sqlTongHoaDon = "SELECT COUNT(*) FROM HOADON WHERE MANV = @MANV AND CONVERT(DATE, NGAYLAP) = CONVERT(DATE, GETDATE())";
+                SqlCommand cmdTongHoaDon = new SqlCommand(sqlTongHoaDon, conn);
+                cmdTongHoaDon.Parameters.AddWithValue("@MANV", manv);
+                int TongHoaDonHomNay = (int)cmdTongHoaDon.ExecuteScalar();
+                textBox1.Text = TongHoaDonHomNay.ToString();
+
+                // Tổng doanh thu hôm nay
+                string sqlTongDoanhThu = "SELECT SUM(TONGTIEN) FROM HOADON WHERE MANV = @MANV AND CONVERT(DATE, NGAYLAP) = CONVERT(DATE, GETDATE())";
+                SqlCommand cmdTongDoanhThu = new SqlCommand(sqlTongDoanhThu, conn);
+                cmdTongDoanhThu.Parameters.AddWithValue("@MANV", manv);
+                object result = cmdTongDoanhThu.ExecuteScalar();
+                decimal TongDoanhThuHomNay = result != DBNull.Value ? Convert.ToDecimal(result) : 0;
+                textBox2.Text = TongDoanhThuHomNay.ToString("N0") + " VNĐ";
+
+                // Tổng hóa đơn tháng này
+                string sqlTongHoaDonThangNay = "SELECT COUNT(*) FROM HOADON WHERE MANV = @MANV AND MONTH(NGAYLAP) = MONTH(GETDATE()) AND YEAR(NGAYLAP) = YEAR(GETDATE())";
+                SqlCommand cmdTongHoaDonThangNay = new SqlCommand(sqlTongHoaDonThangNay, conn);
+                cmdTongHoaDonThangNay.Parameters.AddWithValue("@MANV", manv);
+                int TongHoaDonThangNay = (int)cmdTongHoaDonThangNay.ExecuteScalar();
+                textBox3.Text = TongHoaDonThangNay.ToString();
+
+                // Tổng số món đã bán
+                string sqlSoMonDaBan = "SELECT SUM(CTHD.SOLUONG) FROM CHITIETHOADON CTHD JOIN HOADON HD ON CTHD.MAHD = HD.MAHD WHERE MANV = @MANV";
+                SqlCommand cmdSoMonDaBan = new SqlCommand(sqlSoMonDaBan, conn);
+                cmdSoMonDaBan.Parameters.AddWithValue("@MANV", manv);  // ✅ Thêm dòng này
+                object resultSoMon = cmdSoMonDaBan.ExecuteScalar();
+                int SoMonDaBan = resultSoMon != DBNull.Value ? Convert.ToInt32(resultSoMon) : 0;
+                textBox4.Text = SoMonDaBan.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thống kê: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+
+
+        private void btnTong_Click(object sender, EventArgs e)
+        {
+            if (SessionLogin.Quyen == "Quản lý")
+            {
+                HienThiHoaDonAdmin();
+            }
+            if (SessionLogin.Quyen == "Nhân viên")
+            {
+                HienThiHoaDonNhanVien();
+            }
+        }
     }
+
 }
